@@ -11,15 +11,31 @@ A handwritten digit recognition application using a Convolutional Neural Network
 - Display prediction confidence and probability distribution
 - ~99% accuracy on test data
 
+## Project Structure
+
+```
+study-01/
+├── desktop_version/
+│   ├── CLAUDE.md                    # Claude Code 가이드 (데스크톱)
+│   ├── digit_recognizer_pyside.py   # PySide6 데스크톱 앱
+│   └── digit_recognizer.py          # Tkinter 레거시 버전
+├── web_version/
+│   ├── CLAUDE.md                    # Claude Code 가이드 (웹)
+│   └── digit_recognizer_web.py      # Gradio 웹 인터페이스
+├── digit_model.keras                # 사전 학습된 CNN 모델
+└── dist/
+    └── DigitRecognizer.app          # macOS 독립 실행 파일
+```
+
 ## Files
 
 | File | Description |
 |------|-------------|
-| `digit_recognizer_pyside.py` | PySide6 desktop GUI application |
-| `digit_recognizer_web.py` | Gradio web interface version |
-| `digit_recognizer.py` | Tkinter version (requires system Python) |
+| `desktop_version/digit_recognizer_pyside.py` | PySide6 desktop GUI application |
+| `desktop_version/digit_recognizer.py` | Tkinter version (requires system Python) |
+| `web_version/digit_recognizer_web.py` | Gradio web interface version |
 | `digit_model.keras` | Pre-trained CNN model |
-| `DigitRecognizer.app` | Standalone macOS application (in `dist/`) |
+| `dist/DigitRecognizer.app` | Standalone macOS application |
 
 ## Requirements
 
@@ -46,14 +62,14 @@ uv pip install tensorflow pillow numpy PySide6
 ### Desktop Application (PySide6)
 
 ```bash
-python digit_recognizer_pyside.py
+python desktop_version/digit_recognizer_pyside.py
 ```
 
 ### Web Application (Gradio)
 
 ```bash
 uv pip install gradio
-python digit_recognizer_web.py
+python web_version/digit_recognizer_web.py
 # Open http://localhost:7860 in browser
 ```
 
@@ -95,7 +111,7 @@ Output (0-9 probabilities)
 
 ```bash
 uv pip install pyinstaller
-pyinstaller --name "DigitRecognizer" --windowed --onedir --add-data "digit_model.keras:." digit_recognizer_pyside.py
+pyinstaller --name "DigitRecognizer" --windowed --onedir --add-data "digit_model.keras:." desktop_version/digit_recognizer_pyside.py
 ```
 
 ## License

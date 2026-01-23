@@ -42,6 +42,33 @@ PySide6로 가능할까?
 
 (Translation: The black area on the right side of the canvas should be white.)
 
+## Project Refactoring (2026-01-23)
+
+```
+리팩토링을 하고 싶어
+web_version과 desktop_version 폴더를 만들고, 각 폴더에 해당하는 CLAUDE.md 파일을 생성해줘
+```
+
+(Translation: I want to refactor. Create web_version and desktop_version folders, and create CLAUDE.md files in each folder.)
+
+```
+README.md 문서도 업데이트 해줘
+```
+
+(Translation: Update the README.md document too.)
+
+```
+기존에 작업한 파일들을 옮겨줘
+```
+
+(Translation: Move the existing files to their folders.)
+
+```
+웹버전 실행시켜줘
+```
+
+(Translation: Run the web version.)
+
 ---
 
 ## Quick Recreation Guide
@@ -119,11 +146,12 @@ Build a handwritten digit recognition desktop application for macOS.
 - Bundle trained model inside the app
 
 ## 4. Deliverables
-1. `digit_recognizer_pyside.py` - Main application source code
-2. `digit_model.keras` - Trained CNN model
-3. `DigitRecognizer.app` - Standalone macOS application
-4. `README.md` - Project documentation
-5. `.gitignore` - Git ignore file
+1. `desktop_version/digit_recognizer_pyside.py` - Main desktop application source code
+2. `web_version/digit_recognizer_web.py` - Gradio web interface
+3. `digit_model.keras` - Trained CNN model
+4. `DigitRecognizer.app` - Standalone macOS application
+5. `README.md` - Project documentation
+6. `.gitignore` - Git ignore file
 
 ## 5. Constraints
 - All code and comments in English
